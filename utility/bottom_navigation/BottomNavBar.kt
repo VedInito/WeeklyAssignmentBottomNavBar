@@ -1,4 +1,4 @@
-package com.inito.assignmentaugweek2.bottom_navigation
+package com.inito.assignmentaugweek2.utility.bottom_navigation
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.BadgedBox
@@ -22,13 +22,13 @@ fun BottomNavBar(
     onItemClick: (BottomNavItem) -> Unit
 ) {
     BottomNavigation(
-        modifier = modifier, backgroundColor = Color.DarkGray, elevation = 5.dp
+        modifier = modifier, backgroundColor = Color(0xFF333333)
     ) {
         items.forEach { item ->
             val selected = item.route == selectedItemRoute
             BottomNavigationItem(selected = selected,
                 onClick = { onItemClick(item) },
-                selectedContentColor = Color.Green,
+                selectedContentColor = Color.Green.copy(alpha = 0.4f),
                 unselectedContentColor = Color.Gray,
                 icon = {
                     Column(

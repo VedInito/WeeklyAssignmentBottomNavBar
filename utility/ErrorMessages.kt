@@ -1,10 +1,10 @@
 package com.inito.assignmentaugweek2.utility
 
 fun nameMessage(name: String) =
-    if (name.isEmpty())
-        "name cannot be empty"
-    else
-        ""
+    when {
+        name.isEmpty() -> "name cannot be empty"
+        else -> ""
+    }
 
 fun emailMessage(email: String) =
     when {
@@ -30,14 +30,14 @@ fun phoneMessage(phone: String) =
 
 fun passwordMessage(password: String) =
     when {
-        password.length < 8
-        -> "password should contain at least 8 characters"
-
         password.all { !it.isUpperCase() }
         -> "password should contain at least one capital letter"
 
         password.all { it.isLetterOrDigit() }
         -> "password should contain at least one special character"
+
+        password.length < 8
+        -> "password should contain at least 8 characters"
 
         else -> ""
     }

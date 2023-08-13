@@ -1,4 +1,4 @@
-package com.inito.assignmentaugweek2.bottom_navigation
+package com.inito.assignmentaugweek2.utility.bottom_navigation
 
 import androidx.compose.ui.graphics.vector.ImageVector
 
