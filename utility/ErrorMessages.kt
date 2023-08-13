@@ -1,8 +1,8 @@
-package com.inito.bottomnavigationbar.utility
+package com.inito.assignmentaugweek2.utility
 
 fun nameMessage(name: String) =
     if (name.isEmpty())
-        "\tname cannot be empty"
+        "name cannot be empty"
     else
         ""
 
@@ -41,3 +41,4 @@ fun passwordMessage(password: String) =
 
         else -> ""
     }
+

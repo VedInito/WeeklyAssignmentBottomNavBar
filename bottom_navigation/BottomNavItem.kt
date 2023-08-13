@@ -1,10 +1,9 @@
-package com.inito.bottomnavigationbar.bottom_navigation
+package com.inito.assignmentaugweek2.bottom_navigation
 
 import androidx.compose.ui.graphics.vector.ImageVector
 
-data class BottomNavItem (
-    val route: String,
+data class BottomNavItem(
     val name: String,
     val icon: ImageVector,
-    val badgeCount: Int = 0
+    val route: String
 )

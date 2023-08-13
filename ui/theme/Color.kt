@@ -1,4 +1,4 @@
-package com.inito.bottomnavigationbar.ui.theme
+package com.inito.assignmentaugweek2.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
