@@ -9,6 +9,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -17,13 +18,18 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import com.inito.assignmentaugweek2.screen.shop.Shop
 import com.inito.assignmentaugweek2.utility.bottom_navigation.BottomNavBar
 import com.inito.assignmentaugweek2.utility.bottom_navigation.BottomNavItem
+import com.inito.assignmentaugweek2.viewmodel.ProductDataViewModel
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Info(userInfo: List<String>) {
+fun Info(
+    productDataViewModel: ProductDataViewModel,
+    userInfo: List<String>
+) {
     var currentScreenRoute by rememberSaveable { mutableStateOf(Screen.Home.route) }
     var previousScreenRoute by rememberSaveable { mutableStateOf(Screen.Home.route) }
     Scaffold(
@@ -36,9 +42,9 @@ fun Info(userInfo: List<String>) {
                         icon = Icons.Default.Home
                     ),
                     BottomNavItem(
-                        name = "Chat",
+                        name = "shat",
                         route = Screen.Chat.route,
-                        icon = Icons.Default.Notifications
+                        icon = Icons.Default.ShoppingCart
                     ),
                     BottomNavItem(
                         name = "Settings",
@@ -71,7 +77,7 @@ fun Info(userInfo: List<String>) {
         }) {
             when (it) {
                 Screen.Home.route -> Home(userInfo)
-                Screen.Chat.route -> Chat()
+                Screen.Chat.route -> Shop(productDataViewModel = productDataViewModel)
                 Screen.Settings.route -> Settings()
             }
         }

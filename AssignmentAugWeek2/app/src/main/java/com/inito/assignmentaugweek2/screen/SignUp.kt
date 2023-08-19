@@ -151,7 +151,7 @@ fun Head() {
             .clip(CircleShape),
         tint = Color.DarkGray
     )
-    Spacer(modifier = Modifier.height(60.dp))
+    Spacer(modifier = Modifier.height(40.dp))
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

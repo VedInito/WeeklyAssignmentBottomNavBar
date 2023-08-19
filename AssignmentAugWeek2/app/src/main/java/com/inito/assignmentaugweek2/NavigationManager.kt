@@ -11,9 +11,12 @@ import androidx.navigation.compose.rememberNavController
 import com.inito.assignmentaugweek2.screen.Info
 import com.inito.assignmentaugweek2.screen.Screen
 import com.inito.assignmentaugweek2.screen.SignUp
+import com.inito.assignmentaugweek2.viewmodel.ProductDataViewModel
 
 @Composable
-fun NavigationManager() {
+fun NavigationManager(
+    productDataViewModel: ProductDataViewModel
+) {
     val navController = rememberNavController()
 
     var userInfo by rememberSaveable { mutableStateOf(List(4) { "default" }) }
@@ -25,7 +28,10 @@ fun NavigationManager() {
         }
 
         composable(route = Screen.Info.route) {
-            Info(userInfo)
+            Info(
+                productDataViewModel = productDataViewModel,
+                userInfo = userInfo
+            )
         }
     }
 }
